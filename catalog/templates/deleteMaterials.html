@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Materials</title>
+	<style type="text/css">
+		background-color: gray;
+	</style>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+	<h1>Are you sure you want to delete {{ materials.name }}??</h1>
+	<a href="{{ url_for('gdisconnect') }}">Logout</a><br><br>
+	<form action="{{ url_for('deleteMaterials', materials_id = materials.id) }}" method="POST">
+		<input type="submit" value="Delete">
+		<a href="{{ url_for('showMaterials') }}">Cancel</a>
+	</form>
+</body>
+</html>

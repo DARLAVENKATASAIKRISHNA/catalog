@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Materials</title>
+	<style type="text/css">
+		body{ background-image: url("/static/background.jpg");
+		 }
+	</style>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+	<h1 align="center">Materials</h1>
+	<p align="center"><a href="{{ url_for('newMaterials') }}">Create a new restaurant</a><br><br></p>
+	<p align="center"><a href="{{ url_for('gdisconnect') }}">Logout</a><br><br></p>
+	<div class="row">
+	{% for i in materials %}
+		<div class="card">
+			<div align="center">{{i.name}}<br>
+			<a href="{{ url_for('showMenu', materials_id = i.id) }}">View Items</a><br>
+			<a href="{{ url_for('editMaterials',  materials_id = i.id) }}">Edit</a>
+			<a href="{{ url_for('deleteMaterials',  materials_id = i.id) }}">Delete</a><br><br>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+</body>
+</html>

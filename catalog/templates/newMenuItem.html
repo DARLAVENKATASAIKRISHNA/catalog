@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New menu item</title>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+	<h1>Add a new menu item</h1>
+	<a href="{{ url_for('gdisconnect') }}">Logout</a><br><br>
+	<form action="{{ url_for('newMenuItem', materials_id = materials_id) }}" method="POST">
+		<label>Name: </label><input type="text" name="name" size="30" required="required"><br><br>
+		
+		Descrption:
+		<input type="text" name="descrption" size="30" required="required"><br><br>
+		<label>Price: </label><input type="text" name="price" size="30" required="required"><br><br>
+		<input type="submit" value="Create">
+		<a href="{{ url_for('showMenu', materials_id = materials_id) }}">Cancel</a>
+	</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu Items</title>
+	<style type="text/css">
+		body{ background-image: url("/static/background.jpg");
+		 }
+		
+		
+		.card{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+
+	<h1 align="center"> {{ materials.name }}</h1>
+	<div class="row">
+		{% for item in items %}
+			<div class="card">
+				<div >
+				<b>NAME: </b> {{ item.name }}<br>
+				<b>DESCRIPTION: </b>{{ item.descrption }}<br>
+				<b>PRICE: </b>{{ item.price }}<br>
+				</div>
+			</div>
+	{% endfor %}
+	</div>
+</body>
+</html>

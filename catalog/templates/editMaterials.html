@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Materials</title>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+	<h1>Edit Materials</h1>
+	<a href="{{ url_for('gdisconnect') }}">Logout</a><br><br>
+	<form action="{{ url_for('editMaterials', materials_id = materials.id) }}" method="POST">
+		<p>Name:</p>
+		<input type="text" name="name" size="30" placeholder="{{ materials.name }}" required="required">
+		<input type="submit" value="Edit">
+		<a href="{{ url_for('showMaterials') }}">Cancel</a>
+	</form>
+</body>
+</html>

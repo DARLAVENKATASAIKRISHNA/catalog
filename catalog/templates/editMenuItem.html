@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Menu Item</title>
+	
+		<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+	<h1>Edit {{ "'"+item.name+"'" }} in {{ "'"+materials.name+"'" }}</h1>
+	<a href="{{ url_for('gdisconnect') }}">Logout</a><br><br>
+	<form action="{{ url_for('editMenuItem', materials_id = materials.id, menu_id = menu_id) }}" method="POST">
+		<label>Name:</label>
+		<input type="text" name="name" placeholder="{{ item.name }}" required="required"><br><br>
+	
+		Descrption:
+		<input type="text" name="descrption" placeholder="{{ item.descrption }}" required="required"><br><br>
+		<label>Price:</label>
+		<input type="text" name="price" placeholder="{{ item.price }}" required="required"><br><br>
+		<input type="submit" value="Edit">
+		<a href="{{ url_for('showMenu', materials_id = materials.id) }}">Cancel</a>
+	</form>
+</body>
+</html>

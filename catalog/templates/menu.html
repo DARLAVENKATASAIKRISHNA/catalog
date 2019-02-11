@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu Items</title>
+	<style type="text/css">
+		body{ background-image: url("/static/background.jpg");
+		 }
+	</style>
+		<link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+</head>
+<body>
+	<h1>Menu Items in {{ "'"+materials.name+"'" }}</h1>
+	<a href="{{ url_for('newMenuItem', materials_id = materials.id) }}">Add menu item!!</a><br><br>
+	<a href="{{ url_for('gdisconnect') }}">Logout</a><br><br>
+	<div class="row">
+	{% for item in items %}
+		<div class="card">
+			<div>
+			<b>NAME: </b>{{ item.name }}<br>
+			<b>DESCRIPTION: </b>{{ item.descrption }}<br>
+			<b>PRICE: </b>{{ item.price }}<br>
+	
+			<a href="{{ url_for('editMenuItem', materials_id = materials.id, menu_id = item.id)}}">Edit</a>
+			<a href="{{ url_for('deleteMenuItem', materials_id = materials.id, menu_id=item.id)}}">Delete</a></div>
+		</div>
+	{% endfor %}
+</div>
+</body>
+</html>
